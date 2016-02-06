@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SocioPorCategoria" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="15c99d37-2c58-40df-a52e-5f77b7caee76">
+	<property name="ireport.zoom" value="1.3310000000000104"/>
+	<property name="ireport.x" value="50"/>
+	<property name="ireport.y" value="169"/>
+	<field name="idSocio" class="java.lang.Long"/>
+	<field name="nomeSocio" class="java.lang.String"/>
+	<field name="categoriaSocio.nomeCategoriaSocio" class="java.lang.String"/>
+	<field name="inclusaoSocio" class="java.util.Date"/>
+	<field name="sexoSocio" class="java.lang.String"/>
+	<title>
+		<band height="40">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="40" backcolor="#666666" uuid="045b9fa6-bcb9-4fea-87ac-677607a59bee"/>
+				<image>
+					<reportElement x="493" y="0" width="40" height="40" uuid="012a3b50-6607-4ca8-8a44-5f3989624c05"/>
+					<imageExpression><![CDATA["C:\\CMS\\web\\img\\cms-160x137.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement positionType="Float" x="20" y="20" width="180" height="20" forecolor="#FFFFFF" uuid="2d250ee0-d5e5-4ab5-a51a-cf57745f98a0"/>
+					<textElement>
+						<font size="12" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Carteirinha Sócio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="0" width="75" height="20" forecolor="#FFFFFF" uuid="3ad96311-f478-4f4f-8135-bdb1dd7357ad"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CMS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="15" backcolor="#666666" uuid="35a845c9-7f74-40f6-b3d1-43f0ffaf8584"/>
+				<textField evaluationTime="Report">
+					<reportElement mode="Transparent" x="493" y="0" width="62" height="15" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="8ea517b1-7baa-4d89-adf8-602f2ded7d06"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy HH:mm:ss">
+					<reportElement x="20" y="0" width="267" height="15" forecolor="#FFFFFF" uuid="56d2c1b7-6508-4556-8891-c07b36dac270"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="287" y="0" width="206" height="15" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="982f598d-2af6-4787-adc2-e4bef4c8494f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" /"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="404">
+			<frame>
+				<reportElement mode="Opaque" x="103" y="213" width="360" height="171" backcolor="#CCCCCC" uuid="173497ae-c90a-494c-b6e1-867312228a0c"/>
+				<image>
+					<reportElement x="150" y="11" width="61" height="50" uuid="ab1c0122-646c-451f-8f7c-05370bda8239"/>
+					<imageExpression><![CDATA["C:\\CMS\\web\\img\\cms-160x137.png"]]></imageExpression>
+				</image>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="184" y="61" width="60" height="20" uuid="e4ad8ada-ccec-4496-8fc0-9b03cb9266d8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{inclusaoSocio}]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement mode="Transparent" x="78" y="98" width="200" height="50" backcolor="#FFFFFF" uuid="0cae81c1-cc1b-43c2-85b4-c8d551fa923a"/>
+					<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128C" drawText="false" checksumRequired="false">
+						<jr:codeExpression><![CDATA[$F{idSocio}]]></jr:codeExpression>
+					</jr:barbecue>
+				</componentElement>
+				<textField>
+					<reportElement x="117" y="128" width="134" height="20" uuid="639ce605-6d5d-4395-bf91-1b4cbad87626"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{idSocio}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="106" y="61" width="78" height="20" uuid="7957fd4e-2538-49bf-ad81-ce38e9e1c72f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Membro desde : ]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="102" y="20" width="360" height="171" backcolor="#CCCCCC" uuid="689f578d-84aa-476e-ad5e-d3ba9d8e69ff"/>
+				<image>
+					<reportElement x="225" y="23" width="125" height="116" uuid="0320fc0b-23b2-4591-9a17-38b17c5229db"/>
+					<imageExpression><![CDATA[$F{sexoSocio}.matches("m") ? "C:\\CMS\\web\\img\\elliot.jpg" :  "C:\\CMS\\web\\img\\stevie.jpg"]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="78" y="39" width="134" height="20" uuid="4bf53022-ad60-4045-9800-cc331e514182"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{idSocio}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="24" y="79" width="54" height="20" uuid="93a47482-0c1a-4efe-be1e-2a7035f94c86"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Categoria : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="59" width="54" height="20" uuid="27fd7092-093b-4786-928c-36f9f15596ab"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nome : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="24" y="39" width="54" height="20" uuid="5a44a845-e591-47e6-a0b4-b8c7ff18fc80"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Título : ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="78" y="79" width="134" height="20" uuid="e4cbf7bc-1467-44b9-b5d6-5972ef780ad3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{categoriaSocio.nomeCategoriaSocio}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="77" y="59" width="134" height="20" uuid="551b245d-6051-45fc-920d-ef09ff27cb71"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{nomeSocio}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="79" y="110" width="61" height="50" uuid="2a7de67f-7ce0-4d5f-a72c-b6d5d45d42d3"/>
+					<imageExpression><![CDATA["C:\\CMS\\web\\img\\cms-160x137.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="85" y="10" width="100" height="20" forecolor="#006600" uuid="8973f83a-d299-4c31-903e-9100ae450c4a"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sócio]]></text>
+				</staticText>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="dd0e54fc-3403-4a2a-a479-ca15b02c170c"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="191" width="555" height="1" uuid="369d1f6f-4fbc-4b39-bdf2-4a4bdaeb3f7a"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="102" y="0" width="1" height="404" uuid="9357d285-60d0-4391-9e98-5d47b4daabff"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="462" y="0" width="1" height="404" uuid="5aaf4e2f-7bbf-40d5-9e6c-46871e5a1259"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="213" width="555" height="1" uuid="e8824f23-7d17-4f04-afa2-311ec4fb8560"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="383" width="555" height="1" uuid="dc9c95e3-2194-45d5-9793-f79ce9fadd1b"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SocioPorCategoria" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="15c99d37-2c58-40df-a52e-5f77b7caee76">
+	<property name="ireport.zoom" value="1.3310000000000184"/>
+	<property name="ireport.x" value="314"/>
+	<property name="ireport.y" value="0"/>
+	<field name="socioDependente.idSocio" class="java.lang.String"/>
+	<field name="nomeDependente" class="java.lang.String"/>
+	<field name="parentescoDependente.nomeParentesco" class="java.lang.String"/>
+	<field name="nascimentoDependente" class="java.util.Date"/>
+	<field name="statusDependente" class="java.lang.String"/>
+	<field name="sexoDependente" class="java.lang.String"/>
+	<group name="parentescoDependente">
+		<groupExpression><![CDATA[$F{parentescoDependente.nomeParentesco}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="0" width="802" height="20" backcolor="#CCCCCC" uuid="c2d628ae-16d6-42d2-8930-4dcdaa5c848d"/>
+					<textField>
+						<reportElement x="0" y="0" width="802" height="20" forecolor="#006633" uuid="29d3a78c-133e-4103-b4f4-f986a901f1dd"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="12" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{parentescoDependente.nomeParentesco}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="40">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="40" backcolor="#666666" uuid="045b9fa6-bcb9-4fea-87ac-677607a59bee"/>
+				<image>
+					<reportElement x="740" y="0" width="40" height="40" uuid="012a3b50-6607-4ca8-8a44-5f3989624c05"/>
+					<imageExpression><![CDATA["C:\\CMS\\web\\img\\cms-160x137.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement positionType="Float" x="20" y="20" width="180" height="20" forecolor="#FFFFFF" uuid="2d250ee0-d5e5-4ab5-a51a-cf57745f98a0"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Dependente por Parentesco]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="0" width="75" height="20" forecolor="#FFFFFF" uuid="3ad96311-f478-4f4f-8135-bdb1dd7357ad"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CMS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="15" backcolor="#666666" uuid="35a845c9-7f74-40f6-b3d1-43f0ffaf8584"/>
+				<textField pattern="dd/MM/yyyy HH:mm:ss">
+					<reportElement x="20" y="0" width="548" height="15" forecolor="#FFFFFF" uuid="56d2c1b7-6508-4556-8891-c07b36dac270"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Transparent" x="568" y="0" width="172" height="15" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="982f598d-2af6-4787-adc2-e4bef4c8494f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" /"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement mode="Transparent" x="740" y="0" width="62" height="15" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="8ea517b1-7baa-4d89-adf8-602f2ded7d06"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="180" height="21" forecolor="#FFFFFF" backcolor="#006633" uuid="178630d0-a2be-4d6c-a053-f64bea4102c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dependente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="0" width="72" height="21" forecolor="#FFFFFF" backcolor="#006633" uuid="20b39450-1157-41aa-80e0-32a2493af571"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sócio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="252" y="0" width="63" height="21" forecolor="#FFFFFF" backcolor="#006633" uuid="efb08983-7577-44d5-a22d-145d42e77ed2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="315" y="0" width="86" height="21" forecolor="#FFFFFF" backcolor="#006633" uuid="47fbc27c-8889-467b-87bc-3ebcc11042c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="401" y="0" width="131" height="21" forecolor="#FFFFFF" backcolor="#006633" uuid="6f23739e-4827-4de2-9390-339a3f0be0c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="532" y="0" width="270" height="21" forecolor="#FFFFFF" backcolor="#006633" uuid="4bf93467-ca75-4d3b-9c3f-207b9405cc58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement x="0" y="-1" width="180" height="21" uuid="4bf53022-ad60-4045-9800-cc331e514182"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nomeDependente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="-1" width="72" height="21" uuid="97858153-1b18-407f-8556-a0645a375463"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{socioDependente.idSocio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="315" y="-1" width="86" height="21" uuid="e4cbf7bc-1467-44b9-b5d6-5972ef780ad3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nascimentoDependente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="-1" width="131" height="21" uuid="31e35ee2-a5e2-4304-9b53-6cb77045aa0b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[( $F{statusDependente}.matches("a") ? "Ativo(a)" : ( $F{statusDependente}.matches("b") ? "Bloqueado(a)" : ($F{statusDependente}.matches("d") ? "Documentação pendente" : "")))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="-1" width="63" height="21" uuid="910448dd-75b5-4f14-9f8d-aa948d8feeeb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[( $F{sexoDependente}.matches("m") ? "Masculino" : "Feminino")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="800" height="1" uuid="e99ac2fb-c188-4dd0-ad9b-d0ab524a968d"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

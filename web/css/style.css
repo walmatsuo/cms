@@ -1,0 +1,55 @@
+/**************************************************
+Centralizando div em uma pagina
+**************************************************/
+.topY{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+/**************************************************
+Rodapé do sistema
+**************************************************/
+
+.footer {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height: 40px;
+    left:0px;
+    background-color: #b3b3b3;
+}
+
+/**************************************************
+Tela de login do sistema
+**************************************************/
+
+.logP{
+    background-image: url("../img/16.jpg");
+}
+.logP > .grid {
+    height: 100%;
+}
+.tlogP {
+    max-width: 450px;
+}
+
+/**************************************************
+Espaçamento do container de todas as paginas
+**************************************************/
+.ui.container {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+/**************************************************
+Fundo de paginas soltas
+**************************************************/
+
+.pge{
+    background-image:  url("../img/15.jpg");
+}
+
