@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConectaBanco {
 
     private static final String DRIVER = "org.postgresql.Driver";
-    private static final String URL = "jdbc:postgresql://localhost:5432/cms";
+    private static final String URL = "jdbc:postgresql://localhost:5432/cm2";
     private static final String USUARIO = "postgres";
     private static final String SENHA = "postgres";
 
